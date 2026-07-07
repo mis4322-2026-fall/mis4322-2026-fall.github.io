@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MIS 4322 | Welcome</title>
+  <meta name="description" content="Welcome page for MIS 4322 with course highlights, expectations, and a quick start guide." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4efe7;
+      --bg-2: #efe5d6;
+      --ink: #1d1b18;
+      --muted: #625a52;
+      --accent: #0f766e;
+      --accent-2: #b45309;
+      --card: rgba(255, 255, 255, 0.68);
+      --border: rgba(29, 27, 24, 0.12);
+      --shadow: 0 24px 60px rgba(44, 32, 18, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.16), transparent 30%),
+        radial-gradient(circle at right 20%, rgba(180, 83, 9, 0.16), transparent 26%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(29, 27, 24, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(29, 27, 24, 0.035) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 95%);
+      opacity: 0.45;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 2px 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--ink), var(--accent));
+      color: white;
+      box-shadow: var(--shadow);
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.15rem;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      backdrop-filter: blur(10px);
+      font-size: 0.92rem;
+      box-shadow: 0 10px 24px rgba(29, 27, 24, 0.06);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 8px;
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      background: var(--card);
+      backdrop-filter: blur(14px);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 44px;
+      position: relative;
+      overflow: hidden;
+      animation: rise 700ms ease both;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -50px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(15, 118, 110, 0.22), transparent 68%);
+      filter: blur(4px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.11);
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      margin: 18px 0 14px;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 58ch;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      background: var(--ink);
+      color: white;
+      box-shadow: 0 18px 30px rgba(29, 27, 24, 0.22);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--ink);
+      border: 1px solid var(--border);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+      padding: 18px;
+      align-content: start;
+      animation: rise 850ms ease 90ms both;
+    }
+
+    .stat {
+      padding: 22px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.52));
+      border: 1px solid var(--border);
+    }
+
+    .stat-label {
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .stat-value {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      margin-top: 22px;
+    }
+
+    .card {
+      padding: 26px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.66);
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 40px rgba(29, 27, 24, 0.08);
+    }
+
+    .card h2,
+    .card h3 {
+      margin: 0 0 10px;
+      font-family: "Fraunces", Georgia, serif;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .card-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .card-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .card-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      margin-top: 9px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      flex: none;
+    }
+
+    .span-7 {
+      grid-column: span 7;
+    }
+
+    .span-5 {
+      grid-column: span 5;
+    }
+
+    .span-4 {
+      grid-column: span 4;
+    }
+
+    .span-8 {
+      grid-column: span 8;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 14px;
+      padding: 16px 0;
+      border-top: 1px solid rgba(29, 27, 24, 0.09);
+    }
+
+    .timeline-item:first-child {
+      border-top: 0;
+      padding-top: 0;
+    }
+
+    .timeline-item strong {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+
+    .timeline-item p {
+      margin: 4px 0 0;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-note a {
+      color: inherit;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .span-7,
+      .span-5,
+      .span-4,
+      .span-8 {
+        grid-column: auto;
+      }
+
+      .hero-copy {
+        padding: 32px;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 20px, 1120px);
+        padding-top: 14px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-copy {
+        padding: 24px;
+        border-radius: 24px;
+      }
+
+      .hero-side {
+        padding: 0;
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 15vw, 4rem);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="#top">
+        <span class="brand-mark">M</span>
+        MIS 4322 Course Site
+      </a>
+      <div class="pill">Welcome to Fall 2026</div>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="panel hero-copy">
+        <span class="eyebrow">Course Welcome Page</span>
+        <h1>MIS 4322</h1>
+        <p class="lede">A practical, modern introduction to information systems thinking for business. This course page gives students a clear starting point, a sense of the journey ahead, and the key habits that will make the semester go smoothly.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#start">Start Here</a>
+          <a class="button secondary" href="#expectations">Course Expectations</a>
+        </div>
+      </div>
+
+      <aside class="panel hero-side">
+        <div class="stat">
+          <span class="stat-label">Course Focus</span>
+          <div class="stat-value">Systems</div>
+          <p>Understanding how people, process, data, and technology work together.</p>
+        </div>
+        <div class="stat">
+          <span class="stat-label">How You Will Learn</span>
+          <div class="stat-value">Do</div>
+          <p>Short readings, applied exercises, discussion, and real business examples.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section-grid" id="start">
+      <article class="card span-7">
+        <h2>What this course is about</h2>
+        <p>MIS 4322 is designed to help you think clearly about how organizations use information systems to compete, collaborate, and make decisions. The best way to succeed is to connect the concepts to what you already see in daily life: apps, platforms, automation, analytics, and digital workflows.</p>
+        <ul class="card-list">
+          <li>Learn the language of business technology without losing sight of the business problem.</li>
+          <li>Practice making structured decisions with data, process, and user needs in mind.</li>
+          <li>Build confidence discussing current technology trends in a professional setting.</li>
+        </ul>
+      </article>
+
+      <article class="card span-5" id="expectations">
+        <h2>Course expectations</h2>
+        <p>Bring curiosity, consistency, and a willingness to participate. Most success in a course like this comes from staying current and asking good questions early.</p>
+        <ul class="card-list">
+          <li>Check the course site regularly for updates and deadlines.</li>
+          <li>Complete work on time and communicate early when something comes up.</li>
+          <li>Engage with your classmates respectfully and professionally.</li>
+        </ul>
+      </article>
+
+      <article class="card span-8">
+        <h2>Weekly rhythm</h2>
+        <p>A steady routine helps keep the course manageable and reduces last-minute stress.</p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <strong>Before class</strong>
+            <p>Review the assigned material and note any terms or ideas that feel unfamiliar.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>During class</strong>
+            <p>Focus on the examples, ask questions, and connect the lesson to a real organization or app.</p>
+          </div>
+          <div class="timeline-item">
+            <strong>After class</strong>
+            <p>Complete the assigned practice or reflection while the material is still fresh.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card span-4">
+        <h2>Quick start</h2>
+        <p>If you are new to the course, use this simple checklist to get set up fast.</p>
+        <ul class="card-list">
+          <li>Bookmark the course site.</li>
+          <li>Set up your calendar for weekly deadlines.</li>
+          <li>Introduce yourself to the class.</li>
+        </ul>
+      </article>
+    </section>
+
+    <p class="footer-note">Built as a GitHub Pages landing page for MIS 4322. Update the text, schedule, and links as needed for your section.</p>
+  </main>
+</body>
+</html>
