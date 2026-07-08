@@ -3,27 +3,693 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MIS 4322</title>
-  <meta http-equiv="refresh" content="0; url=/class-notes/" />
+  <title>MIS 4322 | Schedule and AI Policy</title>
+  <meta name="description" content="MIS 4322 course schedule and AI usage policy." />
   <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      font-family: "Segoe UI", sans-serif;
-      background: #f5f5f5;
-      color: #1f1f1f;
+    :root {
+      --bg: #f4efe7;
+      --bg-2: #efe5d6;
+      --ink: #1d1b18;
+      --muted: #625a52;
+      --accent: #0f766e;
+      --accent-2: #b45309;
+      --card: rgba(255, 255, 255, 0.68);
+      --border: rgba(29, 27, 24, 0.12);
+      --shadow: 0 24px 60px rgba(44, 32, 18, 0.12);
     }
 
-    a {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #0b5fa5;
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(15, 118, 110, 0.16), transparent 30%),
+        radial-gradient(circle at right 20%, rgba(180, 83, 9, 0.16), transparent 26%),
+        linear-gradient(180deg, var(--bg), var(--bg-2));
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(29, 27, 24, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(29, 27, 24, 0.035) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 95%);
+      opacity: 0.45;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 2px 24px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--ink), var(--accent));
+      color: white;
+      box-shadow: var(--shadow);
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+    }
+
+    .pill {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.58);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      backdrop-filter: blur(10px);
+      font-size: 0.92rem;
+      box-shadow: 0 10px 24px rgba(29, 27, 24, 0.06);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+      align-items: stretch;
+      margin-top: 8px;
+    }
+
+    .panel {
+      border: 1px solid var(--border);
+      background: var(--card);
+      backdrop-filter: blur(14px);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 44px;
+      position: relative;
+      overflow: hidden;
+      animation: rise 700ms ease both;
+    }
+
+    .hero-copy::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -50px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(15, 118, 110, 0.22), transparent 68%);
+      filter: blur(4px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.11);
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    h1 {
+      margin: 18px 0 14px;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+      font-family: Georgia, serif;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 58ch;
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.primary {
+      background: var(--ink);
+      color: white;
+      box-shadow: 0 18px 30px rgba(29, 27, 24, 0.22);
+    }
+
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--ink);
+      border: 1px solid var(--border);
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 16px;
+      padding: 18px;
+      align-content: start;
+      animation: rise 850ms ease 90ms both;
+    }
+
+    .stat {
+      padding: 22px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.52));
+      border: 1px solid var(--border);
+    }
+
+    .stat-label {
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 8px;
+      font-family: Georgia, serif;
+    }
+
+    .stat p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      margin-top: 22px;
+    }
+
+    .card {
+      padding: 26px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.66);
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 40px rgba(29, 27, 24, 0.08);
+    }
+
+    .card h2,
+    .card h3 {
+      margin: 0 0 10px;
+      letter-spacing: -0.03em;
+      font-family: Georgia, serif;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .card-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .card-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .card-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      margin-top: 9px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      flex: none;
+    }
+
+    .span-4 {
+      grid-column: span 4;
+    }
+
+    .span-8 {
+      grid-column: span 8;
+    }
+
+    .span-12 {
+      grid-column: span 12;
+    }
+
+    .schedule-card {
+      padding: 18px;
+      overflow-x: auto;
+    }
+
+    .schedule-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 14px;
+      padding: 8px 8px 14px;
+    }
+
+    .schedule-head h2 {
+      margin: 0;
+      letter-spacing: -0.03em;
+      font-family: Georgia, serif;
+    }
+
+    .schedule-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .schedule-table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+      table-layout: fixed;
+      border: 2px solid rgba(29, 27, 24, 0.38);
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      border: 2px solid rgba(29, 27, 24, 0.38);
+      height: 42px;
+      padding: 8px;
+      vertical-align: middle;
+      font-size: 0.95rem;
+    }
+
+    .schedule-table th {
+      background: #c9c9c9;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .schedule-table td.day {
+      width: 140px;
+      background: #c9c9c9;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .schedule-table td.mw {
+      width: 66px;
+      text-align: center;
+      font-weight: 700;
+      background: #dddddd;
+    }
+
+    .schedule-table td.date {
+      width: 90px;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      background: #dddddd;
+    }
+
+    .schedule-table td.slot {
+      background: #f7f7f7;
+      color: var(--ink);
+    }
+
+    .policy-block h2 {
+      margin-top: 20px;
+      margin-bottom: 8px;
+      font-size: 1.35rem;
+    }
+
+    .policy-block h3 {
+      margin-top: 16px;
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+      letter-spacing: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-weight: 700;
+    }
+
+    .policy-block ul,
+    .policy-block ol {
+      margin: 8px 0 12px 22px;
+      color: var(--muted);
+    }
+
+    .policy-block blockquote {
+      margin: 12px 0 0;
+      padding: 10px 14px;
+      border-left: 4px solid var(--accent);
+      background: #f2f8fc;
+      color: #2f3a48;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-note a {
+      color: inherit;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .span-4,
+      .span-8,
+      .span-12 {
+        grid-column: auto;
+      }
+
+      .hero-copy {
+        padding: 32px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 20px, 1120px);
+        padding-top: 14px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-copy {
+        padding: 24px;
+        border-radius: 24px;
+      }
+
+      .hero-side {
+        padding: 0;
+      }
+
+      h1 {
+        font-size: clamp(2.6rem, 15vw, 4rem);
+      }
+
+      .schedule-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
-  <a href="/class-notes/">Go to MIS 4322 Class Notes</a>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="#top">
+        <span class="brand-mark">M</span>
+        MIS 4322 Course Site
+      </a>
+      <div class="pill">Welcome to Fall 2026</div>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="panel hero-copy">
+        <span class="eyebrow">Course Schedule</span>
+        <h1>MIS 4322</h1>
+        <p class="lede">Use this page as the semester tracker for daily topics, in-class work, and due dates. AI policy is included below as part of the course index.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#schedule">View Schedule</a>
+          <a class="button secondary" href="/class-notes/">Open Class Notes</a>
+        </div>
+      </div>
+
+      <aside class="panel hero-side">
+        <div class="stat">
+          <span class="stat-label">Primary Hub</span>
+          <div class="stat-value">/class-notes/</div>
+          <p>All chapters, sections, and supporting materials are published in the class-notes route.</p>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Policy</span>
+          <div class="stat-value">AI Included</div>
+          <p>The full AI usage policy is embedded below for quick access in the same index page.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section-grid" id="schedule">
+      <article class="card span-8 schedule-card">
+        <div class="schedule-head">
+          <h2>Course Schedule Table</h2>
+          <p>Columns: Day, MW, Date, Topic, Content, Assignments</p>
+        </div>
+        <table class="schedule-table" aria-label="MIS 4322 course schedule">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>MW</th>
+              <th>Date</th>
+              <th>Topic</th>
+              <th>Content</th>
+              <th>Assignments</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="day">1</td><td class="mw">M</td><td class="date">8/24</td><td class="slot">Introduction to Course</td><td class="slot">N/A</td><td class="slot"></td></tr>
+            <tr><td class="day">2</td><td class="mw">W</td><td class="date">8/26</td><td class="slot">Python &amp; Git</td><td class="slot">Chapters 1-2</td><td class="slot"></td></tr>
+            <tr><td class="day">3</td><td class="mw">M</td><td class="date">8/31</td><td class="slot">Python Basics, Lists, Dictionaries</td><td class="slot">Chapter 3</td><td class="slot"></td></tr>
+            <tr><td class="day">4</td><td class="mw">W</td><td class="date">9/2</td><td class="slot">Lists, Loops</td><td class="slot">Chapter 3</td><td class="slot"></td></tr>
+            <tr><td class="day">Labor Day</td><td class="mw">M</td><td class="date">9/7</td><td class="slot">-</td><td class="slot">-</td><td class="slot"></td></tr>
+            <tr><td class="day">5</td><td class="mw">W</td><td class="date">9/9</td><td class="slot">Loops, Comprehensions</td><td class="slot">Chapter 3</td><td class="slot"></td></tr>
+            <tr><td class="day">6</td><td class="mw">M</td><td class="date">9/14</td><td class="slot">Lambdas, Functions, Comprehensions</td><td class="slot">Chapter 4</td><td class="slot"></td></tr>
+            <tr><td class="day">7</td><td class="mw">W</td><td class="date">9/16</td><td class="slot">Lambdas, Functions, Comprehensions</td><td class="slot">Chapter 4</td><td class="slot"></td></tr>
+            <tr><td class="day">8</td><td class="mw">M</td><td class="date">9/21</td><td class="slot">REVIEW</td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">9</td><td class="mw">W</td><td class="date">9/23</td><td class="slot">EXAM</td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">10</td><td class="mw">M</td><td class="date">9/28</td><td class="slot">Files, CSV</td><td class="slot">Chapter 5</td><td class="slot"></td></tr>
+            <tr><td class="day">11</td><td class="mw">W</td><td class="date">9/30</td><td class="slot">JSON, JSON Files</td><td class="slot">Chapter 6</td><td class="slot"></td></tr>
+            <tr><td class="day">12</td><td class="mw">M</td><td class="date">10/05</td><td class="slot">JSON APIs, HTTP Requests</td><td class="slot">Chapter 6</td><td class="slot"></td></tr>
+            <tr><td class="day">13</td><td class="mw">W</td><td class="date">10/07</td><td class="slot">Numpy</td><td class="slot">Chapter 7</td><td class="slot"></td></tr>
+            <tr><td class="day">14</td><td class="mw">M</td><td class="date">10/12</td><td class="slot">Pandas</td><td class="slot">Chapter 7</td><td class="slot"></td></tr>
+            <tr><td class="day">15</td><td class="mw">W</td><td class="date">10/14</td><td class="slot">Visualization</td><td class="slot">Chapter 8</td><td class="slot"></td></tr>
+            <tr><td class="day">16</td><td class="mw">M</td><td class="date">10/19</td><td class="slot">Databases</td><td class="slot">Chapter 9</td><td class="slot"></td></tr>
+            <tr><td class="day">17</td><td class="mw">W</td><td class="date">10/21</td><td class="slot">REVIEW</td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">18</td><td class="mw">M</td><td class="date">10/26</td><td class="slot">EXAM</td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">19</td><td class="mw">W</td><td class="date">10/28</td><td class="slot">Web Application, Flask</td><td class="slot">Chapter 10</td><td class="slot"></td></tr>
+            <tr><td class="day">20</td><td class="mw">M</td><td class="date">11/2</td><td class="slot">OOP, Classes</td><td class="slot">Chapter 11</td><td class="slot"></td></tr>
+            <tr><td class="day">21</td><td class="mw">W</td><td class="date">11/4</td><td class="slot">Classes, Modeling</td><td class="slot">Chapter 11</td><td class="slot"></td></tr>
+            <tr><td class="day">22</td><td class="mw">M</td><td class="date">11/9</td><td class="slot">ORM Concepts, Django</td><td class="slot">Chapter 12</td><td class="slot"></td></tr>
+            <tr><td class="day">23</td><td class="mw">W</td><td class="date">11/11</td><td class="slot">Django Querying, Admin</td><td class="slot">Chapter 12</td><td class="slot"></td></tr>
+            <tr><td class="day">24</td><td class="mw">M</td><td class="date">11/16</td><td class="slot">Django Web Framework</td><td class="slot">Chapter 13</td><td class="slot"></td></tr>
+            <tr><td class="day">25</td><td class="mw">W</td><td class="date">11/18</td><td class="slot">Django Views and Routes</td><td class="slot">Chapter 13</td><td class="slot"></td></tr>
+            <tr><td class="day">TG</td><td class="mw">M</td><td class="date">11/23</td><td class="slot"></td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">TG</td><td class="mw">W</td><td class="date">11/25</td><td class="slot"></td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">26</td><td class="mw">M</td><td class="date">11/30</td><td class="slot">Django Forms</td><td class="slot">Chapter 13</td><td class="slot"></td></tr>
+            <tr><td class="day">27</td><td class="mw">W</td><td class="date">12/2</td><td class="slot">Django Hosting</td><td class="slot">Chapter 13</td><td class="slot"></td></tr>
+            <tr><td class="day">28</td><td class="mw">M</td><td class="date">12/7</td><td class="slot">Review</td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">29</td><td class="mw">W</td><td class="date">12/9</td><td class="slot">EXAM</td><td class="slot"></td><td class="slot"></td></tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article class="card span-4">
+        <h2>Links</h2>
+        <p>Use these course resources throughout the semester.</p>
+        <ul class="card-list">
+          <li><a href="/class-notes/">Class Notes Route</a></li>
+          <li><a href="/class-notes/Grading/">Grading Policy</a></li>
+        </ul>
+      </article>
+
+      <article class="card span-12 policy-block" id="ai-policy">
+        <h2>AI Usage Policy</h2>
+        <p>This course treats AI as a real-world productivity tool, not as a shortcut around learning.</p>
+
+        <h2>1) Policy Philosophy</h2>
+        <ul>
+          <li>AI use is allowed and expected in many course activities.</li>
+          <li>Students are responsible for understanding what they submit.</li>
+          <li>Exams are paper-based and individual, so conceptual mastery remains the core accountability mechanism.</li>
+          <li>The course project is a capstone for applied evidence of professional skill, including responsible AI use.</li>
+        </ul>
+
+        <h2>2) Where AI Use Is Allowed</h2>
+        <h3>Homework</h3>
+        <ul>
+          <li>AI use is allowed for homework.</li>
+          <li>Homework is intentionally lower-stakes practice.</li>
+          <li>Students should use homework to build understanding for exams.</li>
+        </ul>
+
+        <h3>Course Project</h3>
+        <ul>
+          <li>AI use is allowed and encouraged for project planning, coding support, debugging, and documentation.</li>
+          <li>Students must be able to explain architecture, implementation choices, tradeoffs, and defects.</li>
+          <li>AI-assisted work does not reduce quality expectations.</li>
+        </ul>
+
+        <h3>Studying and Self-Teaching</h3>
+        <ul>
+          <li>Students are encouraged to use AI for concept review, practice generation, and explaining errors.</li>
+          <li>Students should verify AI outputs with course materials, tests, and runtime behavior.</li>
+        </ul>
+
+        <h2>3) Where AI Use Is Not Allowed</h2>
+        <h3>Exams</h3>
+        <ul>
+          <li>AI tools are not allowed during paper exams.</li>
+          <li>Exams measure each student's personal understanding.</li>
+        </ul>
+
+        <h3>Misrepresentation</h3>
+        <ul>
+          <li>Submitting AI-generated content as if fully self-authored without disclosure is not acceptable.</li>
+          <li>Copying code or text without understanding it is considered a learning integrity issue.</li>
+        </ul>
+
+        <h2>4) Required AI Transparency</h2>
+        <p>Students must maintain a lightweight AI usage log for major assignments and the project.</p>
+        <p>Include:</p>
+        <ul>
+          <li>Date and task</li>
+          <li>Tool used</li>
+          <li>Prompt summary</li>
+          <li>Output summary</li>
+          <li>What was accepted, modified, or rejected</li>
+          <li>One short reflection on what was learned</li>
+        </ul>
+        <p>A short weekly summary is acceptable when activity is minor.</p>
+
+        <h2>5) Quackthrough Protocol (AI Rubber Duck Debugging)</h2>
+        <p>A quackthrough is a structured debugging conversation with AI before asking for instructor help.</p>
+        <p>Students should perform this sequence:</p>
+        <ol>
+          <li>State the expected behavior and actual behavior.</li>
+          <li>Share the smallest reproducible code snippet.</li>
+          <li>Ask AI for hypotheses, not only fixes.</li>
+          <li>Run one change at a time and record outcomes.</li>
+          <li>Summarize what was learned and what remains blocked.</li>
+        </ol>
+        <p>Students should bring this summary when requesting help.</p>
+
+        <h2>6) Office Hours Escalation Model</h2>
+        <p>Office hours use AI as first-level supplemental instruction with instructor guidance.</p>
+        <p>Support flow:</p>
+        <ol>
+          <li>Student attempts a quackthrough.</li>
+          <li>Student shares log and blocker.</li>
+          <li>Instructor helps evaluate AI suggestions, correct misconceptions, and decide next steps.</li>
+          <li>Student implements and verifies with tests or reproducible checks.</li>
+        </ol>
+        <p>This model emphasizes coaching, critical evaluation, and domain judgment over answer-seeking.</p>
+
+        <h2>7) Responsible Use Standards</h2>
+        <p>Students are expected to:</p>
+        <ul>
+          <li>Validate AI output with tests, tracing, and documentation.</li>
+          <li>Protect secrets, credentials, and sensitive data.</li>
+          <li>Avoid pasting restricted or private data into external tools.</li>
+          <li>Cite external sources when AI output includes borrowed material.</li>
+          <li>Ask for conceptual explanations when code is unclear.</li>
+        </ul>
+
+        <h2>8) Instructor Evaluation Lens</h2>
+        <p>Work is evaluated on:</p>
+        <ul>
+          <li>Correctness and reliability</li>
+          <li>Conceptual understanding</li>
+          <li>Ability to explain and defend decisions</li>
+          <li>Quality of testing and verification</li>
+          <li>Professional communication of AI-assisted workflow</li>
+        </ul>
+        <p>AI assistance can improve process quality, but it cannot replace demonstrated understanding.</p>
+
+        <h2>9) Optional Language for Syllabus</h2>
+        <p>Suggested statement:</p>
+        <blockquote>
+          AI tools are permitted in homework and project work in this course. You are accountable for the correctness of your work and your understanding of all submitted material. Paper exams remain individual and no-AI. Use AI as a learning accelerator, not a substitute for reasoning.
+        </blockquote>
+      </article>
+    </section>
+
+    <p class="footer-note">MIS 4322 landing page. Schedule and policy are both maintained here.</p>
+  </main>
 </body>
 </html>
