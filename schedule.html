@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MIS 4322 | Course Home</title>
-  <meta name="description" content="MIS 4322 course home with schedule, grading, and class notes links." />
+  <title>MIS 4322 | Course Schedule</title>
+  <meta name="description" content="MIS 4322 course schedule." />
   <style>
     :root {
       --bg: #f4efe7;
@@ -492,13 +492,13 @@
 
     <section class="hero" id="top">
       <div class="panel hero-copy">
-        <span class="eyebrow">Course Home</span>
+        <span class="eyebrow">Course Schedule</span>
         <h1>MIS 4322</h1>
-        <p class="lede">Use this home page to quickly navigate the main course resources and term materials.</p>
+        <p class="lede">Use this page as the semester tracker for daily topics, in-class work, and due dates.</p>
         <div class="hero-actions">
-          <a class="button primary" href="/schedule.html">View Schedule</a>
+          <a class="button primary" href="#schedule">View Schedule</a>
+          <a class="button secondary" href="/">Open Home</a>
           <a class="button secondary" href="/grading.html">View Grading</a>
-          <a class="button secondary" href="/class-notes/">Open Class Notes</a>
         </div>
       </div>
 
@@ -509,50 +509,79 @@
           <p>All chapters, sections, and supporting materials are published in the class-notes route.</p>
         </div>
         <div class="stat">
-          <span class="stat-label">Schedule</span>
-          <div class="stat-value">/schedule.html</div>
-          <p>Daily course pacing, dates, and chapter map are maintained on the separate schedule page.</p>
+          <span class="stat-label">Home</span>
+          <div class="stat-value">/</div>
+          <p>Use the home page as the central navigation hub for schedule, grading, and class-notes links.</p>
         </div>
       </aside>
     </section>
 
-    <section class="section-grid" id="home-links">
+    <section class="section-grid" id="schedule">
+      <article class="card span-8 schedule-card">
+        <div class="schedule-head">
+          <h2>Course Schedule Table</h2>
+          <p>Columns: Day, MW, Date, Topic, Content, Assignments</p>
+        </div>
+        <table class="schedule-table" aria-label="MIS 4322 course schedule">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>MW</th>
+              <th>Date</th>
+              <th>Topic</th>
+              <th>Content</th>
+              <th>Assignments</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="day">1</td><td class="mw">M</td><td class="date">8/24</td><td class="slot">Introduction to Course</td><td class="slot">N/A</td><td class="slot"></td></tr>
+            <tr><td class="day">2</td><td class="mw">W</td><td class="date">8/26</td><td class="slot">Python &amp; Git</td><td class="slot">Chapters 1-2</td><td class="slot"></td></tr>
+            <tr><td class="day">3</td><td class="mw">M</td><td class="date">8/31</td><td class="slot">Python Basics, Lists, Dictionaries</td><td class="slot">Chapter 3</td><td class="slot"></td></tr>
+            <tr><td class="day">4</td><td class="mw">W</td><td class="date">9/2</td><td class="slot">Lists, Loops</td><td class="slot">Chapter 3</td><td class="slot"></td></tr>
+            <tr><td class="day">Labor Day</td><td class="mw">M</td><td class="date">9/7</td><td class="slot">-</td><td class="slot">-</td><td class="slot"></td></tr>
+            <tr><td class="day">5</td><td class="mw">W</td><td class="date">9/9</td><td class="slot">Loops, Comprehensions</td><td class="slot">Chapter 3</td><td class="slot"></td></tr>
+            <tr><td class="day">6</td><td class="mw">M</td><td class="date">9/14</td><td class="slot">Lambdas, Functions, Comprehensions</td><td class="slot">Chapter 4</td><td class="slot"></td></tr>
+            <tr><td class="day">7</td><td class="mw">W</td><td class="date">9/16</td><td class="slot">Lambdas, Functions, Comprehensions</td><td class="slot">Chapter 4</td><td class="slot"></td></tr>
+            <tr><td class="day">8</td><td class="mw">M</td><td class="date">9/21</td><td class="slot">REVIEW</td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">9</td><td class="mw">W</td><td class="date">9/23</td><td class="slot">EXAM</td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">10</td><td class="mw">M</td><td class="date">9/28</td><td class="slot">Files, CSV</td><td class="slot">Chapter 5</td><td class="slot"></td></tr>
+            <tr><td class="day">11</td><td class="mw">W</td><td class="date">9/30</td><td class="slot">JSON, JSON Files</td><td class="slot">Chapter 6</td><td class="slot"></td></tr>
+            <tr><td class="day">12</td><td class="mw">M</td><td class="date">10/05</td><td class="slot">JSON APIs, HTTP Requests</td><td class="slot">Chapter 6</td><td class="slot"></td></tr>
+            <tr><td class="day">13</td><td class="mw">W</td><td class="date">10/07</td><td class="slot">Numpy</td><td class="slot">Chapter 7</td><td class="slot"></td></tr>
+            <tr><td class="day">14</td><td class="mw">M</td><td class="date">10/12</td><td class="slot">Pandas</td><td class="slot">Chapter 7</td><td class="slot"></td></tr>
+            <tr><td class="day">15</td><td class="mw">W</td><td class="date">10/14</td><td class="slot">Visualization</td><td class="slot">Chapter 8</td><td class="slot"></td></tr>
+            <tr><td class="day">16</td><td class="mw">M</td><td class="date">10/19</td><td class="slot">Databases</td><td class="slot">Chapter 9</td><td class="slot"></td></tr>
+            <tr><td class="day">17</td><td class="mw">W</td><td class="date">10/21</td><td class="slot">REVIEW</td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">18</td><td class="mw">M</td><td class="date">10/26</td><td class="slot">EXAM</td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">19</td><td class="mw">W</td><td class="date">10/28</td><td class="slot">Web Application, Flask</td><td class="slot">Chapter 10</td><td class="slot"></td></tr>
+            <tr><td class="day">20</td><td class="mw">M</td><td class="date">11/2</td><td class="slot">OOP, Classes</td><td class="slot">Chapter 11</td><td class="slot"></td></tr>
+            <tr><td class="day">21</td><td class="mw">W</td><td class="date">11/4</td><td class="slot">Classes, Modeling</td><td class="slot">Chapter 11</td><td class="slot"></td></tr>
+            <tr><td class="day">22</td><td class="mw">M</td><td class="date">11/9</td><td class="slot">ORM Concepts, Django</td><td class="slot">Chapter 12</td><td class="slot"></td></tr>
+            <tr><td class="day">23</td><td class="mw">W</td><td class="date">11/11</td><td class="slot">Django Querying, Admin</td><td class="slot">Chapter 12</td><td class="slot"></td></tr>
+            <tr><td class="day">24</td><td class="mw">M</td><td class="date">11/16</td><td class="slot">Django Web Framework</td><td class="slot">Chapter 13</td><td class="slot"></td></tr>
+            <tr><td class="day">25</td><td class="mw">W</td><td class="date">11/18</td><td class="slot">Django Views and Routes</td><td class="slot">Chapter 13</td><td class="slot"></td></tr>
+            <tr><td class="day">TG</td><td class="mw">M</td><td class="date">11/23</td><td class="slot"></td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">TG</td><td class="mw">W</td><td class="date">11/25</td><td class="slot"></td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">26</td><td class="mw">M</td><td class="date">11/30</td><td class="slot">Django Forms</td><td class="slot">Chapter 13</td><td class="slot"></td></tr>
+            <tr><td class="day">27</td><td class="mw">W</td><td class="date">12/2</td><td class="slot">Django Hosting</td><td class="slot">Chapter 13</td><td class="slot"></td></tr>
+            <tr><td class="day">28</td><td class="mw">M</td><td class="date">12/7</td><td class="slot">Review</td><td class="slot"></td><td class="slot"></td></tr>
+            <tr><td class="day">29</td><td class="mw">W</td><td class="date">12/9</td><td class="slot">EXAM</td><td class="slot"></td><td class="slot"></td></tr>
+          </tbody>
+        </table>
+      </article>
 
       <article class="card span-4">
         <h2>Links</h2>
         <p>Use these course resources throughout the semester.</p>
         <ul class="card-list">
-          <li><a href="/schedule.html">Course Schedule</a></li>
+          <li><a href="/">Course Home</a></li>
           <li><a href="/class-notes/">Class Notes Route</a></li>
           <li><a href="/grading.html">Grading Policy</a></li>
         </ul>
       </article>
-
-      <article class="card span-8 policy-block" id="home-overview">
-        <h2>Course Resources</h2>
-        <p>Use these pages throughout the term for weekly pacing, grade structure, and chapter materials.</p>
-
-        <h3>What to Use</h3>
-        <ul>
-          <li><strong>Schedule</strong>: Daily topics, dates, and chapter progression.</li>
-          <li><strong>Grading</strong>: Assessment weights, attendance gate, and evaluation workflow.</li>
-          <li><strong>Class Notes</strong>: Full chapter notes, sections, and exercises.</li>
-        </ul>
-
-        <h3>Recommended Weekly Workflow</h3>
-        <ol>
-          <li>Check the schedule before class.</li>
-          <li>Review relevant chapter notes in class-notes.</li>
-          <li>Use grading criteria to prioritize submissions and preparation.</li>
-        </ol>
-
-        <blockquote>
-          Keep this page as the navigation hub. Detailed content lives on the dedicated schedule and grading pages.
-        </blockquote>
-      </article>
     </section>
 
-    <p class="footer-note">MIS 4322 course home. Schedule and grading are maintained on their dedicated pages.</p>
+    <p class="footer-note">MIS 4322 schedule page. Home and grading pages are linked for quick navigation.</p>
   </main>
 </body>
 </html>

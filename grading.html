@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MIS 4322 | Course Home</title>
-  <meta name="description" content="MIS 4322 course home with schedule, grading, and class notes links." />
+  <title>MIS 4322 | Grading Policy</title>
+  <meta name="description" content="MIS 4322 grading and assessment strategy." />
   <style>
     :root {
       --bg: #f4efe7;
@@ -492,12 +492,12 @@
 
     <section class="hero" id="top">
       <div class="panel hero-copy">
-        <span class="eyebrow">Course Home</span>
+        <span class="eyebrow">Grading and Assessment</span>
         <h1>MIS 4322</h1>
-        <p class="lede">Use this home page to quickly navigate the main course resources and term materials.</p>
+        <p class="lede">This page provides the grading and assessment strategy used for MIS 4322. The schedule and policy pages are linked here for quick reference.</p>
         <div class="hero-actions">
           <a class="button primary" href="/schedule.html">View Schedule</a>
-          <a class="button secondary" href="/grading.html">View Grading</a>
+          <a class="button secondary" href="/">Open Home</a>
           <a class="button secondary" href="/class-notes/">Open Class Notes</a>
         </div>
       </div>
@@ -509,50 +509,228 @@
           <p>All chapters, sections, and supporting materials are published in the class-notes route.</p>
         </div>
         <div class="stat">
-          <span class="stat-label">Schedule</span>
-          <div class="stat-value">/schedule.html</div>
-          <p>Daily course pacing, dates, and chapter map are maintained on the separate schedule page.</p>
+          <span class="stat-label">Home</span>
+          <div class="stat-value">/</div>
+          <p>Use the home page as the main navigation hub across schedule, grading, and class notes resources.</p>
         </div>
       </aside>
     </section>
 
-    <section class="section-grid" id="home-links">
+    <section class="section-grid" id="grading-policy">
 
       <article class="card span-4">
         <h2>Links</h2>
         <p>Use these course resources throughout the semester.</p>
         <ul class="card-list">
+          <li><a href="/">Course Home</a></li>
           <li><a href="/schedule.html">Course Schedule</a></li>
           <li><a href="/class-notes/">Class Notes Route</a></li>
-          <li><a href="/grading.html">Grading Policy</a></li>
         </ul>
       </article>
 
-      <article class="card span-8 policy-block" id="home-overview">
-        <h2>Course Resources</h2>
-        <p>Use these pages throughout the term for weekly pacing, grade structure, and chapter materials.</p>
+      <article class="card span-8 policy-block" id="grading-text">
+        <h2>Grading and Assessment Strategy (Draft v0.1)</h2>
+        <p>This policy is designed to be easy for students to understand and easy for the instructor to run consistently.</p>
 
-        <h3>What to Use</h3>
+        <h2>1) Attendance Requirement (Pass/Fail Gate)</h2>
         <ul>
-          <li><strong>Schedule</strong>: Daily topics, dates, and chapter progression.</li>
-          <li><strong>Grading</strong>: Assessment weights, attendance gate, and evaluation workflow.</li>
-          <li><strong>Class Notes</strong>: Full chapter notes, sections, and exercises.</li>
+          <li>Students must attend at least 75% of class sessions.</li>
+          <li>If attendance is below 75%, the student fails the course regardless of points earned in other categories.</li>
+          <li>Attendance is tracked per class session (present/absent).</li>
+        </ul>
+        <p>This is a course-completion requirement, not a points category.</p>
+
+        <h2>2) Grade Components (100 Points Total)</h2>
+        <table class="schedule-table" aria-label="Grade components">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Weight</th>
+              <th>Why It Exists</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="slot">Exams (3 paper exams)</td><td class="slot">55%</td><td class="slot">Primary measure of individual conceptual and technical understanding under controlled conditions.</td></tr>
+            <tr><td class="slot">Homework (exercise-based)</td><td class="slot">10%</td><td class="slot">Low-stakes practice and completion accountability; students can use AI while preparing for exam understanding.</td></tr>
+            <tr><td class="slot">Course Project</td><td class="slot">25%</td><td class="slot">Demonstrates independent mastery through applied work.</td></tr>
+            <tr><td class="slot">Participation (commit activity)</td><td class="slot">10%</td><td class="slot">Rewards consistent engagement and active course workflow.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>3) Exams (55%)</h2>
+        <ul>
+          <li>There are 3 exams, weighted equally within the exam category (55% total).</li>
+          <li>Exams are paper-based and drawn from the chapter assessment question bank.</li>
+          <li>Suggested chapter grouping:
+            <ul>
+              <li>Exam 1: Chapters 1-4</li>
+              <li>Exam 2: Chapters 5-9</li>
+              <li>Exam 3: Chapters 10-13</li>
+            </ul>
+          </li>
+          <li>Exam questions should include:
+            <ul>
+              <li>conceptual understanding</li>
+              <li>code-reading interpretation</li>
+              <li>short applied reasoning based on class topics</li>
+            </ul>
+          </li>
         </ul>
 
-        <h3>Recommended Weekly Workflow</h3>
+        <h2>4) Homework (10%)</h2>
+        <ul>
+          <li>Homework is based on selected section exercises.</li>
+          <li>Students may use AI tools for homework.</li>
+          <li>Homework is graded for correctness/completion only.</li>
+          <li>Homework is intentionally low weight so students are motivated to build true understanding for exams.</li>
+          <li>Simple homework rubric (per assignment):
+            <ul>
+              <li>100% correctness/completion</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>Recommended Homework Schedule (Selective)</h3>
+        <p>Not every chapter needs homework. Use homework where practice volume has the biggest learning payoff.</p>
+        <table class="schedule-table" aria-label="Homework recommendations by chapter">
+          <thead>
+            <tr>
+              <th>Chapter</th>
+              <th>Homework Recommendation</th>
+              <th>Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="slot">1</td><td class="slot">Optional / in-class only</td><td class="slot">Setup and onboarding are better handled live.</td></tr>
+            <tr><td class="slot">2</td><td class="slot">Optional / in-class only</td><td class="slot">Git workflow can be reinforced through participation commits.</td></tr>
+            <tr><td class="slot">3</td><td class="slot">Homework required</td><td class="slot">Core data-structure fluency needs repetition.</td></tr>
+            <tr><td class="slot">4</td><td class="slot">Homework required</td><td class="slot">Function design and lambdas improve with repeated practice.</td></tr>
+            <tr><td class="slot">5</td><td class="slot">Optional</td><td class="slot">Can be assessed through exams and selected class activities.</td></tr>
+            <tr><td class="slot">6</td><td class="slot">Optional</td><td class="slot">Lightweight reinforcement if API/JSON skills need support.</td></tr>
+            <tr><td class="slot">7</td><td class="slot">Homework required</td><td class="slot">NumPy/Pandas skills benefit from hands-on work outside class.</td></tr>
+            <tr><td class="slot">8</td><td class="slot">Optional</td><td class="slot">Keep focus on interpretation; not heavy coding practice.</td></tr>
+            <tr><td class="slot">9</td><td class="slot">Optional</td><td class="slot">SQL bridge can be measured well in exams.</td></tr>
+            <tr><td class="slot">10</td><td class="slot">Optional</td><td class="slot">Flask concepts can be kept low-stakes before OOP deep dive.</td></tr>
+            <tr><td class="slot">11</td><td class="slot">Homework required</td><td class="slot">OOP modeling needs individual practice before project work.</td></tr>
+            <tr><td class="slot">12-13</td><td class="slot">No standalone homework</td><td class="slot">Learning evidence is captured through the course project.</td></tr>
+          </tbody>
+        </table>
+
+        <p>Practical cadence:</p>
+        <ul>
+          <li>Plan 4 required homework checkpoints tied to Chapters 3, 4, 7, and 11.</li>
+          <li>Optionally add 1 bonus or recovery homework from Chapters 5, 6, or 9.</li>
+          <li>Keep Chapters 12-13 focused on project milestones rather than separate homework submissions.</li>
+        </ul>
+
+        <h2>5) Participation via Commits (10%)</h2>
+        <p>Participation is tracked from Git commit history (timestamped commits).</p>
+        <p>To keep this fair and low-maintenance, score participation by active weeks instead of raw commit count.</p>
+        <ul>
+          <li>Define an "active week" as a week with at least 2 meaningful commits on coursework.</li>
+          <li>Participation score = (active weeks / total course weeks) * 10 points, capped at 10.</li>
+          <li>The instructor can use a script to pull commit timestamps and summarize weekly activity.</li>
+        </ul>
+
+        <p>Recommended guardrails:</p>
+        <ul>
+          <li>Multiple tiny commits in one minute should not automatically count as higher participation.</li>
+          <li>Commits should represent real progress (exercise work, notes updates, refactors, project steps).</li>
+        </ul>
+
+        <h2>6) Course Project (25%)</h2>
+        <p>The project follows a lightweight SDLC deliverable model that is AI-assisted and artifact-driven.</p>
+
+        <p>Required parts:</p>
+        <ul>
+          <li>Acceptance Criteria (<code>ACCEPTANCE_CRITERIA.md</code>)</li>
+          <li>AI Spec Prompt (<code>AI_SPEC_PROMPT.md</code>)</li>
+          <li>Working web artifact (Django app)</li>
+          <li>Reproducible run instructions (<code>RUN.md</code>)</li>
+          <li>Implementation checklist (<code>FEATURE_CHECKLIST.md</code>)</li>
+          <li>AI change log (<code>AI_USAGE.md</code>)</li>
+          <li>Screenshots for key flows</li>
+        </ul>
+
+        <p>Optional bonus part:</p>
+        <ul>
+          <li>Hosting deployment URL + deployment notes</li>
+        </ul>
+
+        <p>Project grading should use the project rubric in <code>site/project-sports-analytics-django/PROJECT_GRADING_RUBRIC.md</code>.</p>
+
+        <p>Local-run gate expectation:</p>
+        <ul>
+          <li>App runs locally from <code>RUN.md</code></li>
+          <li>Login works</li>
+          <li>At least one protected report page works</li>
+        </ul>
+
+        <p>If local-run gate is not met, apply the rubric cap policy.</p>
+
+        <h2>7) Final Grade Calculation</h2>
         <ol>
-          <li>Check the schedule before class.</li>
-          <li>Review relevant chapter notes in class-notes.</li>
-          <li>Use grading criteria to prioritize submissions and preparation.</li>
+          <li>Verify attendance gate first (must be &gt;= 75%).</li>
+          <li>Compute weighted score out of 100 from Exams + Homework + Project + Participation.</li>
+          <li>Convert to letter grade (suggested scale):</li>
         </ol>
 
-        <blockquote>
-          Keep this page as the navigation hub. Detailed content lives on the dedicated schedule and grading pages.
-        </blockquote>
+        <table class="schedule-table" aria-label="Letter grade scale">
+          <thead>
+            <tr>
+              <th>Numeric</th>
+              <th>Letter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="slot">90-100</td><td class="slot">A</td></tr>
+            <tr><td class="slot">80-89</td><td class="slot">B</td></tr>
+            <tr><td class="slot">70-79</td><td class="slot">C</td></tr>
+            <tr><td class="slot">60-69</td><td class="slot">D</td></tr>
+            <tr><td class="slot">&lt;60</td><td class="slot">F</td></tr>
+          </tbody>
+        </table>
+
+        <h2>8) Instructor Workflow (Keep It Sustainable)</h2>
+        <ul>
+          <li>Weekly:
+            <ul>
+              <li>Mark attendance.</li>
+              <li>Run commit-summary script and update participation tracker.</li>
+            </ul>
+          </li>
+          <li>Per module/chapter block:
+            <ul>
+              <li>Grade selected homework batch.</li>
+            </ul>
+          </li>
+          <li>At 3 checkpoints:
+            <ul>
+              <li>Administer and grade exams from existing assessment bank.</li>
+            </ul>
+          </li>
+          <li>End of term:
+            <ul>
+              <li>Evaluate project SDLC deliverables and artifact using the project rubric.</li>
+              <li>Apply attendance gate and finalize grades.</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>9) Notes for Iteration</h2>
+        <p>This draft intentionally optimizes simplicity and operational consistency.</p>
+
+        <p>Likely refinements after first review:</p>
+        <ul>
+          <li>exact number of homework submissions to count</li>
+          <li>late-work and make-up exam policy</li>
+          <li>minimum project requirements and milestone dates</li>
+          <li>participation script rules for handling edge cases</li>
+        </ul>
       </article>
     </section>
 
-    <p class="footer-note">MIS 4322 course home. Schedule and grading are maintained on their dedicated pages.</p>
+    <p class="footer-note">MIS 4322 grading page. Home and schedule pages are linked for quick navigation.</p>
   </main>
 </body>
 </html>
