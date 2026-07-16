@@ -379,6 +379,65 @@
       color: var(--ink);
     }
 
+    .component-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .component-item {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--border);
+    }
+
+    .component-item h3 {
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .component-weight {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 118, 110, 0.11);
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .project-item {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--border);
+    }
+
+    .project-item h3 {
+      margin-bottom: 8px;
+      font-size: 1.02rem;
+    }
+
+    .project-item .component-weight {
+      margin-bottom: 10px;
+    }
+
+    .grade-scale-table {
+      min-width: 0;
+      width: 100%;
+    }
+
     .policy-block h2 {
       margin-top: 20px;
       margin-bottom: 8px;
@@ -531,33 +590,41 @@
       </article>
 
       <article class="card span-8 policy-block" id="grading-text">
-        <h2>Grading and Assessment Strategy (Draft v0.1)</h2>
-        <p>This policy is designed to be easy for students to understand and easy for the instructor to run consistently.</p>
+        <h2>Grading and Assessment Overview</h2>
+        <p>This page explains how your final grade is calculated and what each course requirement means in plain language.</p>
 
-        <h2>1) Attendance Requirement (Pass/Fail Gate)</h2>
+        <h2>1) Grade Components</h2>
+        <p>These are the four parts of your course grade. Together they add up to 100% of the final grade.</p>
+        <div class="component-grid" aria-label="Grade components">
+          <article class="component-item">
+            <h3>Exams</h3>
+            <div class="component-weight">55% of course grade</div>
+            <p>Three paper exams measure your individual understanding of the chapter material.</p>
+          </article>
+          <article class="component-item">
+            <h3>Homework</h3>
+            <div class="component-weight">10% of course grade</div>
+            <p>Short practice assignments help you build skill before exams.</p>
+          </article>
+          <article class="component-item">
+            <h3>Project</h3>
+            <div class="component-weight">25% of course grade</div>
+            <p>A four-part Django project shows what you can build with the ideas from class.</p>
+          </article>
+          <article class="component-item">
+            <h3>Attendance requirement</h3>
+            <div class="component-weight">Pass / fail gate</div>
+            <p>You must attend at least 75% of class meetings to pass the course.</p>
+          </article>
+        </div>
+
+        <h2>2) Attendance Requirement (Pass/Fail Gate)</h2>
         <ul>
           <li>Students must attend at least 75% of class sessions.</li>
           <li>If attendance is below 75%, the student fails the course regardless of points earned in other categories.</li>
           <li>Attendance is tracked per class session (present/absent).</li>
         </ul>
         <p>This is a course-completion requirement, not a points category.</p>
-
-        <h2>2) Grade Components (100 Points Total)</h2>
-        <table class="schedule-table" aria-label="Grade components">
-          <thead>
-            <tr>
-              <th>Component</th>
-              <th>Weight</th>
-              <th>Why It Exists</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td class="slot">Exams (3 paper exams)</td><td class="slot">55%</td><td class="slot">Primary measure of individual conceptual and technical understanding under controlled conditions.</td></tr>
-            <tr><td class="slot">Homework (exercise-based)</td><td class="slot">10%</td><td class="slot">Low-stakes practice and completion accountability; students can use AI while preparing for exam understanding.</td></tr>
-            <tr><td class="slot">Course Project</td><td class="slot">25%</td><td class="slot">Demonstrates independent mastery through applied work.</td></tr>
-            <tr><td class="slot">Participation (commit activity)</td><td class="slot">10%</td><td class="slot">Rewards consistent engagement and active course workflow.</td></tr>
-          </tbody>
-        </table>
 
         <h2>3) Exams (55%)</h2>
         <ul>
@@ -567,7 +634,7 @@
             <ul>
               <li>Exam 1: Chapters 1-4</li>
               <li>Exam 2: Chapters 5-9</li>
-              <li>Exam 3: Chapters 10-13</li>
+              <li>Exam 3: Chapters 1-13</li>
             </ul>
           </li>
           <li>Exam questions should include:
@@ -580,104 +647,67 @@
         </ul>
 
         <h2>4) Homework (10%)</h2>
+        <p>Homework is practice. It is meant to help you prepare, not to surprise you.</p>
         <ul>
-          <li>Homework is based on selected section exercises.</li>
-          <li>Students may use AI tools for homework.</li>
-          <li>Homework is graded for correctness/completion only.</li>
-          <li>Homework is intentionally low weight so students are motivated to build true understanding for exams.</li>
+          <li>Homework comes from selected section exercises.</li>
+          <li>Students may use AI tools while working on homework.</li>
+          <li>Homework is graded for completion and correct effort.</li>
+          <li>The goal is to build confidence before exams, not to create extra pressure.</li>
           <li>Simple homework rubric (per assignment):
             <ul>
-              <li>100% correctness/completion</li>
+              <li>Complete the work and show your process.</li>
             </ul>
           </li>
         </ul>
 
-        <h3>Recommended Homework Schedule (Selective)</h3>
-        <p>Not every chapter needs homework. Use homework where practice volume has the biggest learning payoff.</p>
-        <table class="schedule-table" aria-label="Homework recommendations by chapter">
-          <thead>
-            <tr>
-              <th>Chapter</th>
-              <th>Homework Recommendation</th>
-              <th>Rationale</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td class="slot">1</td><td class="slot">Optional / in-class only</td><td class="slot">Setup and onboarding are better handled live.</td></tr>
-            <tr><td class="slot">2</td><td class="slot">Optional / in-class only</td><td class="slot">Git workflow can be reinforced through participation commits.</td></tr>
-            <tr><td class="slot">3</td><td class="slot">Homework required</td><td class="slot">Core data-structure fluency needs repetition.</td></tr>
-            <tr><td class="slot">4</td><td class="slot">Homework required</td><td class="slot">Function design and lambdas improve with repeated practice.</td></tr>
-            <tr><td class="slot">5</td><td class="slot">Optional</td><td class="slot">Can be assessed through exams and selected class activities.</td></tr>
-            <tr><td class="slot">6</td><td class="slot">Optional</td><td class="slot">Lightweight reinforcement if API/JSON skills need support.</td></tr>
-            <tr><td class="slot">7</td><td class="slot">Homework required</td><td class="slot">NumPy/Pandas skills benefit from hands-on work outside class.</td></tr>
-            <tr><td class="slot">8</td><td class="slot">Optional</td><td class="slot">Keep focus on interpretation; not heavy coding practice.</td></tr>
-            <tr><td class="slot">9</td><td class="slot">Optional</td><td class="slot">SQL bridge can be measured well in exams.</td></tr>
-            <tr><td class="slot">10</td><td class="slot">Optional</td><td class="slot">Flask concepts can be kept low-stakes before OOP deep dive.</td></tr>
-            <tr><td class="slot">11</td><td class="slot">Homework required</td><td class="slot">OOP modeling needs individual practice before project work.</td></tr>
-            <tr><td class="slot">12-13</td><td class="slot">No standalone homework</td><td class="slot">Learning evidence is captured through the course project.</td></tr>
-          </tbody>
-        </table>
-
         <p>Practical cadence:</p>
         <ul>
-          <li>Plan 4 required homework checkpoints tied to Chapters 3, 4, 7, and 11.</li>
-          <li>Optionally add 1 bonus or recovery homework from Chapters 5, 6, or 9.</li>
-          <li>Keep Chapters 12-13 focused on project milestones rather than separate homework submissions.</li>
+          <li>Use homework in chapters where repetition matters most.</li>
+          <li>Keep later chapters focused on the project rather than extra homework.</li>
         </ul>
 
-        <h2>5) Participation via Commits (10%)</h2>
-        <p>Participation is tracked from Git commit history (timestamped commits).</p>
-        <p>To keep this fair and low-maintenance, score participation by active weeks instead of raw commit count.</p>
+        <h2>5) Course Project (25%)</h2>
+        <p>The project is split into four deliverables. Each one builds on the last and matches the course schedule.</p>
+        <div class="project-grid" aria-label="Project deliverables">
+          <article class="project-item">
+            <h3>Deliverable 1</h3>
+            <div class="component-weight">10% of project / 2.5% of course</div>
+            <p>Clone the starter project, create a superuser, verify the pages, create users in admin, and submit a screenshot.</p>
+          </article>
+          <article class="project-item">
+            <h3>Deliverable 2</h3>
+            <div class="component-weight">20% of project / 5% of course</div>
+            <p>Add the Teams and Dashboards models and manage them in admin.</p>
+          </article>
+          <article class="project-item">
+            <h3>Deliverable 3</h3>
+            <div class="component-weight">30% of project / 7.5% of course</div>
+            <p>Build the read-only user page with teams and accessible dashboards, filterable by team.</p>
+          </article>
+          <article class="project-item">
+            <h3>Deliverable 4</h3>
+            <div class="component-weight">40% of project / 10% of course</div>
+            <p>Create the dashboard workflow and display CSV data with jQuery DataTables.</p>
+          </article>
+        </div>
+
+        <p>What to focus on:</p>
         <ul>
-          <li>Define an "active week" as a week with at least 2 meaningful commits on coursework.</li>
-          <li>Participation score = (active weeks / total course weeks) * 10 points, capped at 10.</li>
-          <li>The instructor can use a script to pull commit timestamps and summarize weekly activity.</li>
+          <li>By the end, your project should run locally and feel complete from start to finish.</li>
+          <li>Each deliverable should move you closer to the final app.</li>
+          <li>Use the schedule as your guide for what needs to be ready when.</li>
         </ul>
 
-        <p>Recommended guardrails:</p>
-        <ul>
-          <li>Multiple tiny commits in one minute should not automatically count as higher participation.</li>
-          <li>Commits should represent real progress (exercise work, notes updates, refactors, project steps).</li>
-        </ul>
+        <p>The schedule page shows the due dates for each deliverable.</p>
 
-        <h2>6) Course Project (25%)</h2>
-        <p>The project follows a lightweight SDLC deliverable model that is AI-assisted and artifact-driven.</p>
-
-        <p>Required parts:</p>
-        <ul>
-          <li>Acceptance Criteria (<code>ACCEPTANCE_CRITERIA.md</code>)</li>
-          <li>AI Spec Prompt (<code>AI_SPEC_PROMPT.md</code>)</li>
-          <li>Working web artifact (Django app)</li>
-          <li>Reproducible run instructions (<code>RUN.md</code>)</li>
-          <li>Implementation checklist (<code>FEATURE_CHECKLIST.md</code>)</li>
-          <li>AI change log (<code>AI_USAGE.md</code>)</li>
-          <li>Screenshots for key flows</li>
-        </ul>
-
-        <p>Optional bonus part:</p>
-        <ul>
-          <li>Hosting deployment URL + deployment notes</li>
-        </ul>
-
-        <p>Project grading should use the project rubric in <code>site/project-sports-analytics-django/PROJECT_GRADING_RUBRIC.md</code>.</p>
-
-        <p>Local-run gate expectation:</p>
-        <ul>
-          <li>App runs locally from <code>RUN.md</code></li>
-          <li>Login works</li>
-          <li>At least one protected report page works</li>
-        </ul>
-
-        <p>If local-run gate is not met, apply the rubric cap policy.</p>
-
-        <h2>7) Final Grade Calculation</h2>
+        <h2>6) Final Grade Calculation</h2>
         <ol>
           <li>Verify attendance gate first (must be &gt;= 75%).</li>
-          <li>Compute weighted score out of 100 from Exams + Homework + Project + Participation.</li>
-          <li>Convert to letter grade (suggested scale):</li>
+          <li>Compute weighted score out of 100 from Exams + Homework + Project.</li>
+          <li>Convert to a letter grade using the A+ scale below:</li>
         </ol>
 
-        <table class="schedule-table" aria-label="Letter grade scale">
+        <table class="schedule-table grade-scale-table" aria-label="Letter grade scale">
           <thead>
             <tr>
               <th>Numeric</th>
@@ -685,50 +715,21 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td class="slot">90-100</td><td class="slot">A</td></tr>
-            <tr><td class="slot">80-89</td><td class="slot">B</td></tr>
-            <tr><td class="slot">70-79</td><td class="slot">C</td></tr>
-            <tr><td class="slot">60-69</td><td class="slot">D</td></tr>
+            <tr><td class="slot">97-100</td><td class="slot">A+</td></tr>
+            <tr><td class="slot">93-96</td><td class="slot">A</td></tr>
+            <tr><td class="slot">90-92</td><td class="slot">A-</td></tr>
+            <tr><td class="slot">87-89</td><td class="slot">B+</td></tr>
+            <tr><td class="slot">83-86</td><td class="slot">B</td></tr>
+            <tr><td class="slot">80-82</td><td class="slot">B-</td></tr>
+            <tr><td class="slot">77-79</td><td class="slot">C+</td></tr>
+            <tr><td class="slot">73-76</td><td class="slot">C</td></tr>
+            <tr><td class="slot">70-72</td><td class="slot">C-</td></tr>
+            <tr><td class="slot">67-69</td><td class="slot">D+</td></tr>
+            <tr><td class="slot">63-66</td><td class="slot">D</td></tr>
+            <tr><td class="slot">60-62</td><td class="slot">D-</td></tr>
             <tr><td class="slot">&lt;60</td><td class="slot">F</td></tr>
           </tbody>
         </table>
-
-        <h2>8) Instructor Workflow (Keep It Sustainable)</h2>
-        <ul>
-          <li>Weekly:
-            <ul>
-              <li>Mark attendance.</li>
-              <li>Run commit-summary script and update participation tracker.</li>
-            </ul>
-          </li>
-          <li>Per module/chapter block:
-            <ul>
-              <li>Grade selected homework batch.</li>
-            </ul>
-          </li>
-          <li>At 3 checkpoints:
-            <ul>
-              <li>Administer and grade exams from existing assessment bank.</li>
-            </ul>
-          </li>
-          <li>End of term:
-            <ul>
-              <li>Evaluate project SDLC deliverables and artifact using the project rubric.</li>
-              <li>Apply attendance gate and finalize grades.</li>
-            </ul>
-          </li>
-        </ul>
-
-        <h2>9) Notes for Iteration</h2>
-        <p>This draft intentionally optimizes simplicity and operational consistency.</p>
-
-        <p>Likely refinements after first review:</p>
-        <ul>
-          <li>exact number of homework submissions to count</li>
-          <li>late-work and make-up exam policy</li>
-          <li>minimum project requirements and milestone dates</li>
-          <li>participation script rules for handling edge cases</li>
-        </ul>
       </article>
     </section>
 
