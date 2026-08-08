@@ -598,43 +598,43 @@
         <div class="component-grid" aria-label="Grade components">
           <article class="component-item">
             <h3>Exams</h3>
-            <div class="component-weight">55% of course grade</div>
-            <p>Three paper exams measure your individual understanding of the chapter material.</p>
+            <div class="component-weight">600 points / 60%</div>
+            <p>Three 200-point paper exams measure your individual understanding of the chapter material.</p>
           </article>
           <article class="component-item">
             <h3>Homework</h3>
-            <div class="component-weight">10% of course grade</div>
+            <div class="component-weight">100 points / 10%</div>
             <p>Short practice assignments help you build skill before exams.</p>
           </article>
           <article class="component-item">
             <h3>Project</h3>
-            <div class="component-weight">25% of course grade</div>
+            <div class="component-weight">200 points / 20%</div>
             <p>A four-part Django project shows what you can build with the ideas from class.</p>
           </article>
           <article class="component-item">
-            <h3>Attendance requirement</h3>
-            <div class="component-weight">Pass / fail gate</div>
-            <p>You must attend at least 75% of class meetings to pass the course.</p>
+            <h3>Attendance</h3>
+            <div class="component-weight">100 points / 10%</div>
+            <p>Points are proportional to attendance, and you must attend at least 75% of meetings to pass.</p>
           </article>
         </div>
 
-        <h2>2) Attendance Requirement (Pass/Fail Gate)</h2>
+        <h2>2) Attendance (100 Points and Pass/Fail Gate)</h2>
         <ul>
           <li>Students must attend at least 75% of class sessions.</li>
-          <li>If attendance is below 75%, the student fails the course regardless of points earned in other categories.</li>
+          <li>If attendance is below 75%, the student fails the course regardless of regular or extra-credit points earned.</li>
           <li>Attendance is tracked per class session (present/absent).</li>
+          <li>Attendance points equal sessions attended divided by sessions held, multiplied by 100.</li>
         </ul>
-        <p>This is a course-completion requirement, not a points category.</p>
 
-        <h2>3) Exams (55%)</h2>
+        <h2>3) Exams (600 Points)</h2>
         <ul>
-          <li>There are 3 exams, weighted equally within the exam category (55% total).</li>
+          <li>There are 3 exams worth 200 points each.</li>
           <li>Exams are paper-based and drawn from the chapter assessment question bank.</li>
           <li>Suggested chapter grouping:
             <ul>
               <li>Exam 1: Chapters 1-4</li>
               <li>Exam 2: Chapters 5-9</li>
-              <li>Exam 3: Chapters 1-13</li>
+              <li>Final exam: Chapters 1-13</li>
             </ul>
           </li>
           <li>Exam questions should include:
@@ -650,7 +650,7 @@
         <p>Homework is practice. It is meant to help you prepare, not to surprise you.</p>
         <ul>
           <li>Homework comes from selected section exercises.</li>
-          <li>Students may use AI tools while working on homework.</li>
+          <li>AI may be used for explanations, concept questions, and debugging, but AI code generation is discouraged so students develop fluency by typing and correcting code themselves.</li>
           <li>Homework is graded for completion and correct effort.</li>
           <li>The goal is to build confidence before exams, not to create extra pressure.</li>
           <li>Simple homework rubric (per assignment):
@@ -666,27 +666,27 @@
           <li>Keep later chapters focused on the project rather than extra homework.</li>
         </ul>
 
-        <h2>5) Course Project (25%)</h2>
+        <h2>5) Course Project (200 Points)</h2>
         <p>The project is split into four deliverables. Each one builds on the last and matches the course schedule.</p>
         <div class="project-grid" aria-label="Project deliverables">
           <article class="project-item">
             <h3>Deliverable 1</h3>
-            <div class="component-weight">10% of project / 2.5% of course</div>
+            <div class="component-weight">20 points</div>
             <p>Clone the starter project, create a superuser, verify the pages, create users in admin, and submit a screenshot.</p>
           </article>
           <article class="project-item">
             <h3>Deliverable 2</h3>
-            <div class="component-weight">20% of project / 5% of course</div>
+            <div class="component-weight">40 points</div>
             <p>Add the Teams and Dashboards models and manage them in admin.</p>
           </article>
           <article class="project-item">
             <h3>Deliverable 3</h3>
-            <div class="component-weight">30% of project / 7.5% of course</div>
+            <div class="component-weight">60 points</div>
             <p>Build the read-only user page with teams and accessible dashboards, filterable by team.</p>
           </article>
           <article class="project-item">
             <h3>Deliverable 4</h3>
-            <div class="component-weight">40% of project / 10% of course</div>
+            <div class="component-weight">80 points</div>
             <p>Create the dashboard workflow and display CSV data with jQuery DataTables.</p>
           </article>
         </div>
@@ -700,11 +700,30 @@
 
         <p>The schedule page shows the due dates for each deliverable.</p>
 
-        <h2>6) Final Grade Calculation</h2>
+        <h2>6) Extra Credit</h2>
+        <p>Extra credit adds to points earned without changing the 1,000-point denominator. It cannot replace the 75% attendance requirement.</p>
+        <h3>Independent Full-Stack Django Application — 100 Points, All or Nothing</h3>
+        <p>AI use is strongly encouraged. Build an application distinct from the required project that includes every item below:</p>
+        <ul>
+          <li>A persistent database and working Django data model.</li>
+          <li>A working Django backend with URLs, views, forms, and appropriate application logic.</li>
+          <li>A usable web interface.</li>
+          <li>An end-to-end workflow connecting user input, Django processing, database persistence, and updated UI output.</li>
+          <li>A complete GitHub repository shared with the instructor, including dependencies, setup instructions, a README, and no exposed secrets.</li>
+          <li>A video demonstrating the running application and explaining its architecture, data model, decisions, and limitations.</li>
+          <li>The required AI-use documentation.</li>
+        </ul>
+        <p>Every component is required. A missing component results in 0 points; there is no partial credit. The instructor will not design, code, or debug this independent project.</p>
+
+        <h3>Fireside Fellowship Participation — Up to 50 Points</h3>
+        <p>Earn 10 points per qualifying student-organization event, up to five events. Submit the event name and date, evidence of attendance, and a short reflection or takeaway.</p>
+
+        <h2>7) Final Grade Calculation</h2>
         <ol>
           <li>Verify attendance gate first (must be &gt;= 75%).</li>
-          <li>Compute weighted score out of 100 from Exams + Homework + Project.</li>
-          <li>Convert to a letter grade using the A+ scale below:</li>
+          <li>Add regular points and any extra-credit points earned.</li>
+          <li>Divide by the 1,000-point base and multiply by 100.</li>
+          <li>Convert to a letter grade using the scale below. A is the highest course letter grade.</li>
         </ol>
 
         <table class="schedule-table grade-scale-table" aria-label="Letter grade scale">
@@ -715,8 +734,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td class="slot">97-100</td><td class="slot">A+</td></tr>
-            <tr><td class="slot">93-96</td><td class="slot">A</td></tr>
+            <tr><td class="slot">93-100</td><td class="slot">A</td></tr>
             <tr><td class="slot">90-92</td><td class="slot">A-</td></tr>
             <tr><td class="slot">87-89</td><td class="slot">B+</td></tr>
             <tr><td class="slot">83-86</td><td class="slot">B</td></tr>
