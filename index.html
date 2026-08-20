@@ -89,15 +89,26 @@
       font-size: 1.15rem;
     }
 
-    .pill {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.58);
-      border: 1px solid var(--border);
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .site-nav a {
+      padding: 9px 11px;
       color: var(--muted);
-      backdrop-filter: blur(10px);
+      text-decoration: none;
       font-size: 0.92rem;
-      box-shadow: 0 10px 24px rgba(29, 27, 24, 0.06);
+      font-weight: 650;
+      border-bottom: 2px solid transparent;
+      transition: color 160ms ease, border-color 160ms ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav a[aria-current="page"] {
+      color: var(--ink);
+      border-bottom-color: var(--accent);
     }
 
     .hero {
@@ -460,6 +471,16 @@
         align-items: flex-start;
       }
 
+      .site-nav {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .site-nav a {
+        white-space: nowrap;
+      }
+
       .hero-copy {
         padding: 24px;
         border-radius: 24px;
@@ -483,11 +504,17 @@
 <body>
   <main class="page">
     <header class="topbar">
-      <a class="brand" href="#top">
+      <a class="brand" href="/">
         <span class="brand-mark">M</span>
         MIS 4322 Course Site
       </a>
-      <div class="pill">Welcome to Fall 2026</div>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/" aria-current="page">Home</a>
+        <a href="/schedule.html">Schedule</a>
+        <a href="/policy.html">AI Policy</a>
+        <a href="/grading.html">Grading</a>
+        <a href="/class-notes/">Class Notes</a>
+      </nav>
     </header>
 
     <section class="hero" id="top">
@@ -495,23 +522,17 @@
         <span class="eyebrow">Course Home</span>
         <h1>MIS 4322</h1>
         <p class="lede">Start here to find the main course links, class notes, schedule, and grading details.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="/schedule.html">View Schedule</a>
-          <a class="button secondary" href="/policy.html">View Policy</a>
-          <a class="button secondary" href="/grading.html">View Grading</a>
-          <a class="button secondary" href="/class-notes/">Open Class Notes</a>
-        </div>
       </div>
 
       <aside class="panel hero-side">
         <div class="stat">
-          <span class="stat-label">Primary Hub</span>
-          <div class="stat-value">/class-notes/</div>
-          <p>All chapters, sections, and supporting materials are published in the class-notes route.</p>
+          <span class="stat-label">Class Notes</span>
+          <div class="stat-value">13 chapters</div>
+          <p>Read the chapter material, work through sections, and find supporting exercises.</p>
         </div>
         <div class="stat">
           <span class="stat-label">Schedule</span>
-          <div class="stat-value">/schedule.html</div>
+          <div class="stat-value">Fall 2026</div>
           <p>Find daily topics, dates, and chapter progress on the schedule page.</p>
         </div>
       </aside>
@@ -519,20 +540,15 @@
 
     <section class="section-grid" id="home-links">
 
-      <article class="card span-4">
-        <h2>Links</h2>
-        <p>These are the main course links you’ll use all term.</p>
-        <ul class="card-list">
-          <li><a href="/schedule.html">Course Schedule</a></li>
-          <li><a href="/policy.html">AI Usage Policy</a></li>
-          <li><a href="/class-notes/">Class Notes Route</a></li>
-          <li><a href="/grading.html">Grading Policy</a></li>
-        </ul>
-      </article>
-
-      <article class="card span-8 policy-block" id="home-overview">
+      <article class="card span-12 policy-block" id="home-overview">
         <h2>Course Resources</h2>
         <p>Use these pages for weekly planning, grade details, and chapter work.</p>
+
+        <h3>Course Logistics</h3>
+        <ul>
+          <li><strong>Class meetings</strong>: Mondays and Wednesdays, 8:00–9:15 a.m., Foster 303.</li>
+          <li><strong>Office hours</strong>: Zoom, by appointment only, 1:30–4:00 p.m.</li>
+        </ul>
 
         <h3>What to Use</h3>
         <ul>

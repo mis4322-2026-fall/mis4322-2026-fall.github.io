@@ -89,16 +89,9 @@
       font-size: 1.15rem;
     }
 
-    .pill {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.58);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      backdrop-filter: blur(10px);
-      font-size: 0.92rem;
-      box-shadow: 0 10px 24px rgba(29, 27, 24, 0.06);
-    }
+    .site-nav { display: flex; align-items: center; gap: 6px; }
+    .site-nav a { padding: 9px 11px; color: var(--muted); text-decoration: none; font-size: 0.92rem; font-weight: 650; border-bottom: 2px solid transparent; transition: color 160ms ease, border-color 160ms ease; }
+    .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
 
     .hero {
       display: grid;
@@ -518,6 +511,8 @@
         flex-direction: column;
         align-items: flex-start;
       }
+      .site-nav { width: 100%; overflow-x: auto; padding-bottom: 4px; }
+      .site-nav a { white-space: nowrap; }
 
       .hero-copy {
         padding: 24px;
@@ -542,11 +537,13 @@
 <body>
   <main class="page">
     <header class="topbar">
-      <a class="brand" href="#top">
+      <a class="brand" href="/">
         <span class="brand-mark">M</span>
         MIS 4322 Course Site
       </a>
-      <div class="pill">Welcome to Fall 2026</div>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/">Home</a><a href="/schedule.html">Schedule</a><a href="/policy.html">AI Policy</a><a href="/grading.html" aria-current="page">Grading</a><a href="/class-notes/">Class Notes</a>
+      </nav>
     </header>
 
     <section class="hero" id="top">
@@ -554,42 +551,25 @@
         <span class="eyebrow">Grading and Assessment</span>
         <h1>MIS 4322</h1>
         <p class="lede">This page provides the grading and assessment strategy used for MIS 4322. The schedule and policy pages are linked here for quick reference.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="/schedule.html">View Schedule</a>
-          <a class="button secondary" href="/policy.html">View Policy</a>
-          <a class="button secondary" href="/">Open Home</a>
-          <a class="button secondary" href="/class-notes/">Open Class Notes</a>
-        </div>
       </div>
 
       <aside class="panel hero-side">
         <div class="stat">
-          <span class="stat-label">Primary Hub</span>
-          <div class="stat-value">/class-notes/</div>
-          <p>All chapters, sections, and supporting materials are published in the class-notes route.</p>
+          <span class="stat-label">Course Total</span>
+          <div class="stat-value">1,000 points</div>
+          <p>Exams, homework, the project, and attendance make up the final grade.</p>
         </div>
         <div class="stat">
-          <span class="stat-label">Home</span>
-          <div class="stat-value">/</div>
-          <p>Use the home page as the main navigation hub across schedule, grading, and class notes resources.</p>
+          <span class="stat-label">Attendance</span>
+          <div class="stat-value">75% minimum</div>
+          <p>Students must meet the attendance requirement to pass the course.</p>
         </div>
       </aside>
     </section>
 
     <section class="section-grid" id="grading-policy">
 
-      <article class="card span-4">
-        <h2>Links</h2>
-        <p>Use these course resources throughout the semester.</p>
-        <ul class="card-list">
-          <li><a href="/">Course Home</a></li>
-          <li><a href="/policy.html">AI Usage Policy</a></li>
-          <li><a href="/schedule.html">Course Schedule</a></li>
-          <li><a href="/class-notes/">Class Notes Route</a></li>
-        </ul>
-      </article>
-
-      <article class="card span-8 policy-block" id="grading-text">
+      <article class="card span-12 policy-block" id="grading-text">
         <h2>Grading and Assessment Overview</h2>
         <p>This page explains how your final grade is calculated and what each course requirement means in plain language.</p>
 

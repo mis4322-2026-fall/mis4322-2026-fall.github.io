@@ -89,16 +89,9 @@
       font-size: 1.15rem;
     }
 
-    .pill {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.58);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      backdrop-filter: blur(10px);
-      font-size: 0.92rem;
-      box-shadow: 0 10px 24px rgba(29, 27, 24, 0.06);
-    }
+    .site-nav { display: flex; align-items: center; gap: 6px; }
+    .site-nav a { padding: 9px 11px; color: var(--muted); text-decoration: none; font-size: 0.92rem; font-weight: 650; border-bottom: 2px solid transparent; transition: color 160ms ease, border-color 160ms ease; }
+    .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
 
     .hero {
       display: grid;
@@ -459,6 +452,8 @@
         flex-direction: column;
         align-items: flex-start;
       }
+      .site-nav { width: 100%; overflow-x: auto; padding-bottom: 4px; }
+      .site-nav a { white-space: nowrap; }
 
       .hero-copy {
         padding: 24px;
@@ -483,11 +478,13 @@
 <body>
   <main class="page">
     <header class="topbar">
-      <a class="brand" href="#top">
+      <a class="brand" href="/">
         <span class="brand-mark">M</span>
         MIS 4322 Course Site
       </a>
-      <div class="pill">Welcome to Fall 2026</div>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/">Home</a><a href="/schedule.html" aria-current="page">Schedule</a><a href="/policy.html">AI Policy</a><a href="/grading.html">Grading</a><a href="/class-notes/">Class Notes</a>
+      </nav>
     </header>
 
     <section class="hero" id="top">
@@ -495,30 +492,24 @@
         <span class="eyebrow">Course Schedule</span>
         <h1>MIS 4322</h1>
         <p class="lede">Use this page to keep track of daily topics, in-class work, and due dates.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#schedule">View Schedule</a>
-          <a class="button secondary" href="/">Open Home</a>
-          <a class="button secondary" href="/policy.html">View Policy</a>
-          <a class="button secondary" href="/grading.html">View Grading</a>
-        </div>
       </div>
 
       <aside class="panel hero-side">
         <div class="stat">
-          <span class="stat-label">Primary Hub</span>
-          <div class="stat-value">/class-notes/</div>
-          <p>All chapters, sections, and supporting materials are published in the class-notes route.</p>
+          <span class="stat-label">Class Meetings</span>
+          <div class="stat-value">Mon + Wed</div>
+          <p>Meet from 8:00–9:15 a.m. in Foster 303.</p>
         </div>
         <div class="stat">
-          <span class="stat-label">Home</span>
-          <div class="stat-value">/</div>
-          <p>Start from the home page if you want the full set of course links.</p>
+          <span class="stat-label">Final Exam</span>
+          <div class="stat-value">Dec 11</div>
+          <p>The final exam begins at 9:00 a.m.</p>
         </div>
       </aside>
     </section>
 
     <section class="section-grid" id="schedule">
-      <article class="card span-8 schedule-card">
+      <article class="card span-12 schedule-card">
         <div class="schedule-head">
           <h2>Course Schedule Table</h2>
           <p>Columns: Day, MW, Date, Topic, Content, Assignments</p>
@@ -572,16 +563,6 @@
         </table>
       </article>
 
-      <article class="card span-4">
-        <h2>Links</h2>
-        <p>These are the main course links you’ll use all term.</p>
-        <ul class="card-list">
-          <li><a href="/">Course Home</a></li>
-          <li><a href="/policy.html">AI Usage Policy</a></li>
-          <li><a href="/class-notes/">Class Notes Route</a></li>
-          <li><a href="/grading.html">Grading Policy</a></li>
-        </ul>
-      </article>
     </section>
 
     <p class="footer-note">MIS 4322 schedule page. Home and grading are linked here for quick access.</p>

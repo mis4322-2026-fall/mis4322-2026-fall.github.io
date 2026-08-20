@@ -89,16 +89,9 @@
       font-size: 1.15rem;
     }
 
-    .pill {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.58);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      backdrop-filter: blur(10px);
-      font-size: 0.92rem;
-      box-shadow: 0 10px 24px rgba(29, 27, 24, 0.06);
-    }
+    .site-nav { display: flex; align-items: center; gap: 6px; }
+    .site-nav a { padding: 9px 11px; color: var(--muted); text-decoration: none; font-size: 0.92rem; font-weight: 650; border-bottom: 2px solid transparent; transition: color 160ms ease, border-color 160ms ease; }
+    .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
 
     .hero {
       display: grid;
@@ -459,6 +452,8 @@
         flex-direction: column;
         align-items: flex-start;
       }
+      .site-nav { width: 100%; overflow-x: auto; padding-bottom: 4px; }
+      .site-nav a { white-space: nowrap; }
 
       .hero-copy {
         padding: 24px;
@@ -483,11 +478,13 @@
 <body>
   <main class="page">
     <header class="topbar">
-      <a class="brand" href="#top">
+      <a class="brand" href="/">
         <span class="brand-mark">M</span>
         MIS 4322 Course Site
       </a>
-      <div class="pill">Welcome to Fall 2026</div>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="/">Home</a><a href="/schedule.html">Schedule</a><a href="/policy.html" aria-current="page">AI Policy</a><a href="/grading.html">Grading</a><a href="/class-notes/">Class Notes</a>
+      </nav>
     </header>
 
     <section class="hero" id="top">
@@ -495,23 +492,17 @@
         <span class="eyebrow">AI Usage Policy</span>
         <h1>MIS 4322</h1>
         <p class="lede">This page explains how AI fits into the course and how to use it well in homework, projects, and study work.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="/schedule.html">View Schedule</a>
-          <a class="button secondary" href="/">Open Home</a>
-          <a class="button secondary" href="/grading.html">View Grading</a>
-          <a class="button secondary" href="/class-notes/">Open Class Notes</a>
-        </div>
       </div>
 
       <aside class="panel hero-side">
         <div class="stat">
-          <span class="stat-label">Primary Hub</span>
-          <div class="stat-value">/class-notes/</div>
-          <p>All chapters, sections, and supporting materials are published in the class-notes route.</p>
+          <span class="stat-label">Core Principle</span>
+          <div class="stat-value">Learn first</div>
+          <p>Use AI to support your work while staying responsible for what you submit.</p>
         </div>
         <div class="stat">
           <span class="stat-label">Related Page</span>
-          <div class="stat-value">/grading.html</div>
+          <div class="stat-value">Grading</div>
           <p>See how your grade is put together on the grading page.</p>
         </div>
       </aside>
@@ -519,18 +510,7 @@
 
     <section class="section-grid" id="policy">
 
-      <article class="card span-4">
-        <h2>Links</h2>
-        <p>Use these course resources throughout the semester.</p>
-        <ul class="card-list">
-          <li><a href="/">Course Home</a></li>
-          <li><a href="/schedule.html">Course Schedule</a></li>
-          <li><a href="/grading.html">Grading Policy</a></li>
-          <li><a href="/class-notes/">Class Notes Route</a></li>
-        </ul>
-      </article>
-
-      <article class="card span-8 policy-block" id="policy-text">
+      <article class="card span-12 policy-block" id="policy-text">
         <h2>AI Usage Policy</h2>
         <p>This course treats AI as a real-world productivity tool, but it should help your learning rather than replace it.</p>
 
@@ -540,6 +520,16 @@
           <li>You are still responsible for understanding what you submit.</li>
           <li>Exams are paper-based and individual, so your own understanding still matters most.</li>
           <li>The course project is a place to show applied skill and responsible AI use.</li>
+        </ul>
+
+        <h2>AI Coding Tool as Course Material</h2>
+        <p>There is no required commercial textbook. In place of a textbook purchase, students are strongly encouraged to budget for access to an AI coding assistant such as GitHub Copilot or Codex during the semester.</p>
+        <ul>
+          <li>An AI coding assistant is not formally required, and the course can be completed without one.</li>
+          <li>In practice, an AI coding assistant will be substantially helpful for the larger Django project.</li>
+          <li>Students should treat access to a capable coding assistant as the primary recommended course expense.</li>
+          <li>Free plans or institutionally available access may be used when they provide the needed capabilities.</li>
+          <li>Students who choose not to use a coding assistant should expect substantially more independent development and debugging time.</li>
         </ul>
 
         <h2>2) Where AI Use Is Allowed</h2>
@@ -553,7 +543,7 @@
 
         <h3>Course Project</h3>
         <ul>
-          <li>AI coding tools such as GitHub Copilot and Codex are encouraged for project planning, scaffolding, coding assistance, debugging, testing, and documentation.</li>
+          <li>AI coding tools such as GitHub Copilot and Codex are highly encouraged for project planning, scaffolding, coding assistance, debugging, testing, and documentation.</li>
           <li>You should still be able to explain your design choices, tradeoffs, and bugs.</li>
           <li>AI help does not lower the quality bar.</li>
         </ul>
